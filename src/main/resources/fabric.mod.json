@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "idisplay",
+  "version": "${version}",
+  "name": "IDisplay",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/idisplay/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.enabify.idisplay.client.IdisplayDataGenerator"
+    ],
+    "client": [
+      "net.enabify.idisplay.client.IdisplayClient"
+    ],
+    "main": [
+      "net.enabify.idisplay.Idisplay"
+    ]
+  },
+  "mixins": [
+    "idisplay.mixins.json",
+    {
+      "config": "idisplay.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
